@@ -1,47 +1,53 @@
 ﻿using System;
 
-namespace Project_1
+namespace Project_2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int num, i, m, first, last;
+            int i, j, first, last, sum;
 
 
-            Console.Write("Input First number : ");
+
+            Console.Write("Input starting number of range: ");
             first = int.Parse(Console.ReadLine());
-            Console.Write("Input Last number : ");
+
+            Console.Write("Input ending number of range : ");
             last = int.Parse(Console.ReadLine());
-            Console.Write("The prime numbers between {0} and {1} are : \n", first, last);
+
+            Console.Write("The Perfect numbers between {0} and {1} are : \n", first, last);
 
 
 
 
-            for (num = first; num <= last; num++)
+
+            for (i = first; i <= last; i++)
             {
-                m = 0;
+                sum = 0;
 
 
 
-                for (i = 2; i <= num / 2; i++)
+                for (j = 1; j < i; j++)
                 {
-                    if (num % i == 0)
+                    if (i % j == 0)
                     {
-                        m++;
-                        break;
+                        sum += j;
                     }
                 }
 
-                if (m == 0 && num != 1)
-                    Console.WriteLine(num);
+
+
+                if (sum == i)
+                {
+                    Console.WriteLine(i);
+                }
             }
 
 
 
-            Console.ReadLine();
+            Console.ReadKey();
+
         }
     }
 }
-    
-
